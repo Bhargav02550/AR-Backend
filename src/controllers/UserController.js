@@ -96,6 +96,13 @@ const postUsers = async(req,res,next)=>{
     }
 }
 
+const getAllUsers = async(req,res,next) => {
+
+    const allUsers = await User.find({});
+    return res.status(201).json(allUsers);
+
+}
+
 // const loginUser = async(req,res,next)=>{
 //     var data = {
 //         email:req.body.email,
@@ -123,4 +130,5 @@ const postUsers = async(req,res,next)=>{
 // exports.Register = Register;
 exports.getUsers = getUsers;
 exports.postUsers = postUsers;
+exports.getAllUsers = getAllUsers;
 // exports.loginUser = loginUser;
